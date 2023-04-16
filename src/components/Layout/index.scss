@@ -71,6 +71,7 @@
         opacity: 0.6;
         line-height: 18px;
       }
+
       &::after {
         content: "<h1/>";
         font-family: "La Belle Aurore";
@@ -83,7 +84,8 @@
         line-height: 18px;
       }
     }
-    p{
+
+    p {
       font-size: 15px;
       color: #fff;
       font-family: sans-serif;

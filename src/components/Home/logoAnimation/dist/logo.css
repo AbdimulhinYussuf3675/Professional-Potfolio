@@ -5,12 +5,14 @@
   left: 65%;
   opacity: 0;
   display: block;
+
+  svg {
+    width: 100%;
+    height: auto;
+    fill: transparent;
+  }
 }
-.logo-container svg {
-  width: 100%;
-  height: auto;
-  fill: transparent;
-}
+
 .logo-container .solid-logo {
   position: absolute;
   top: auto;
