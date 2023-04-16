@@ -1,6 +1,10 @@
 import { useState, useEffect } from 'react';
 import './index.scss';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faAngular, faCss3, faGitAlt, faJsSquare, faPython, faVuejs,
+} from '@fortawesome/free-brands-svg-icons';
 import AnimatedLetters from '../AnimatedText';
 import resume from '../../assets/Abdimulhin Adan.pdf';
 
@@ -28,7 +32,7 @@ const About = () => {
           challenging and diverse projects.
         </p>
         <p>
-          I&apos;m from Kenya but living in Nairobi. I&apos;m a
+          I&apos;m from Kenya, living in Nairobi. I&apos;m a
           freelancer who loves building cool UI effects, dynamic webpages
           with amazing animations and creating intuitive, dynamic user
           experiences. I also love to reach out to new opportunities
@@ -41,6 +45,28 @@ const About = () => {
           my way. Here&apos;s my Resume below for more details.
         </p>
         <Link to={resume} className="flat-button">DOWNLOAD RESUME</Link>
+      </div>
+      <div className="stage-cube-cont">
+        <div className="cubespinner">
+          <div className="face1">
+            <FontAwesomeIcon icon={faAngular} color="#DD0031" />
+          </div>
+          <div className="face2">
+            <FontAwesomeIcon icon={faPython} color="#28A4D9" />
+          </div>
+          <div className="face3">
+            <FontAwesomeIcon icon={faVuejs} color="#5ED4F4" />
+          </div>
+          <div className="face4">
+            <FontAwesomeIcon icon={faJsSquare} color="#EFD81D" />
+          </div>
+          <div className="face5">
+            <FontAwesomeIcon icon={faGitAlt} color="#EC4G2A" />
+          </div>
+          <div className="face6">
+            <FontAwesomeIcon icon={faCss3} color="#28A4D9" />
+          </div>
+        </div>
       </div>
     </div>
   );
