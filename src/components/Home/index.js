@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import './index.scss';
 import { useState, useEffect } from 'react';
 import AnimatedLetters from '../AnimatedText';
-import Logo from './logoAnimation/Logo';
+import Particlesbnd from './ParticlesBackground/particles';
 
 const Home = () => {
   const [letterClass, setLetterClass] = useState('text-animate');
@@ -15,6 +15,7 @@ const Home = () => {
   const jobArray = ['F', 'u', 'l', 'l', ' ', 's', 't', 'a', 'c', 'k', ' ', 'D', 'e', 'v', 'e', 'l', 'o', 'p', 'e', 'r', '.'];
   return (
     <div className="container home-page">
+      <Particlesbnd />
       <div className="text-zone">
         <h1>
           <span className={letterClass}>H</span>
@@ -59,7 +60,6 @@ const Home = () => {
         <h2>Fullstack Developer</h2>
         <Link to="/contact" className="flat-button">CONTACT ME!</Link>
       </div>
-      <Logo />
     </div>
   );
 };
