@@ -3,10 +3,12 @@ import './index.scss';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faAngular, faCss3, faGitAlt, faJsSquare, faPython, faVuejs,
+  faJsSquare, faPython,
 } from '@fortawesome/free-brands-svg-icons';
+import { FaReact } from 'react-icons/fa';
+import { DiRuby, DiRor, DiPostgresql } from 'react-icons/di';
 import AnimatedLetters from '../AnimatedText';
-import resume from '../../assets/Abdimulhin Adan.pdf';
+import resume from '../../assets/images/Abdimulhin Adan.pdf';
 
 const About = () => {
   const [letterClass, setLetterClass] = useState('text-animate');
@@ -44,27 +46,27 @@ const About = () => {
           the fact that I&apos;m always ready for any challenges that comes to
           my way. Here&apos;s my Resume below for more details.
         </p>
-        <Link to={resume} className="flat-button">DOWNLOAD RESUME</Link>
+        <Link to={resume} target="_blank" className="flat-button">CHECK RESUME</Link>
       </div>
       <div className="stage-cube-cont">
         <div className="cubespinner">
           <div className="face1">
-            <FontAwesomeIcon icon={faAngular} color="#DD0031" />
+            <FaReact color="#108cc2" />
           </div>
           <div className="face2">
             <FontAwesomeIcon icon={faPython} color="#28A4D9" />
           </div>
           <div className="face3">
-            <FontAwesomeIcon icon={faVuejs} color="#5ED4F4" />
+            <DiPostgresql color="#5ED4F4" />
           </div>
           <div className="face4">
             <FontAwesomeIcon icon={faJsSquare} color="#EFD81D" />
           </div>
           <div className="face5">
-            <FontAwesomeIcon icon={faGitAlt} color="#EC4G2A" />
+            <DiRor color="#d9282e" />
           </div>
           <div className="face6">
-            <FontAwesomeIcon icon={faCss3} color="#28A4D9" />
+            <DiRuby color="#d9282e" />
           </div>
         </div>
       </div>
