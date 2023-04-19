@@ -17,11 +17,15 @@
     "loaders.css": "^0.1.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.8.0",
     "react-leaflet": "^4.2.1",
+    "react-particles": "^2.9.3",
     "react-reveal": "^1.2.2",
     "react-router-dom": "^6.10.0",
     "react-scripts": "5.0.1",
+    "react-tsparticles": "^2.9.3",
     "sass": "^1.60.0",
+    "tsparticles": "^2.9.3",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
