@@ -9,12 +9,16 @@
   border: 1px solid aqua;
   margin-top: 25px;
   float: left;
-  animation: fadeIn 1s 1.8s backwards;
+  animation: fadeInAnimation 1s 1.8s backwards;
   white-space: nowrap;
+  transform: skewX(-10deg);
+  border-radius: 0 15px 0 15px;
+  transition: all 0.3s linear;
+  background: transparent;
 
   &:hover {
-    background: aqua;
-    color: #333;
+    background: #cc6c06;
+    color: #111010;
   }
 }
 
@@ -49,7 +53,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 0 20px 0 rgb(202, 202, 29);
+    box-shadow: 0 0 20px 0 #f06529;
   }
 
   .face1 {
