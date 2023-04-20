@@ -1,4 +1,7 @@
-$primary-color: #ffd700;
+$primary-color: #1b8abd;
+
+@import 'animate.css';
+@import '~loaders.css/src/animations/line-scale-pulse-out.scss';
 
 @import 'animate.css';
 @import '~loaders.css/src/animations/pacman.scss';
@@ -26,4 +29,27 @@ $primary-color: #ffd700;
     url('./assets/fonts/CoolveticaRg-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
+}
+
+.loader-hidden {
+  display: none;
+}
+
+.loader-active {
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  width: 70px;
+  height: 50px;
+  animation: fadeOut 1s 1s;
+  animation-fill-mode: forwards;
+}
+
+input,
+textarea {
+  font-family: 'Helvetica Neue', sans-serif;
 }
