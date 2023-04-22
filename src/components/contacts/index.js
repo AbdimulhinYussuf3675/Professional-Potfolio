@@ -4,13 +4,13 @@ import {
   MapContainer, TileLayer, Marker, Popup,
 } from 'react-leaflet';
 import emailjs from '@emailjs/browser';
+import { BsExclamationLg, BsPatchCheckFill } from 'react-icons/bs';
+import { RiSendPlane2Fill } from 'react-icons/ri';
 import AnimatedLetters from '../AnimatedText';
 import './index.scss';
 
 const Contact = () => {
   const [letterClass, setLetterClass] = useState('text-animate');
-  const form = useRef();
-
   useEffect(() => {
     const interval = setTimeout(() => {
       setLetterClass('text-animate-hover');
@@ -21,20 +21,99 @@ const Contact = () => {
     };
   }, []);
 
-  const sendEmail = (e) => {
-    e.preventDefault();
+  const [validInpt, setValidInpt] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
+  });
 
-    emailjs
-      .sendForm('gmail', 'template_YeJhZkgb', form.current, 'your-token')
-      .then(
-        () => {
-          alert('Message successfully sent!');
-          window.location.reload(false);
-        },
-        () => {
-          alert('Failed to send the message, please try again');
-        },
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setValidInpt((preValue) => ({ ...preValue, [name]: value }));
+  };
+
+  // select all the input with useRef Hook
+  const emailRef = useRef(null);
+  const TextAreaRef = useRef(null);
+
+  const form = useRef(null);
+
+  // show Message function
+  const showMessage = (message, updateColor) => {
+    const divContent = document.createElement('div');
+    divContent.textContent = message;
+    divContent.classList.add('div-content');
+    divContent.style.backgroundColor = updateColor;
+
+    setTimeout(() => {
+      divContent.classList.add('hide');
+      divContent.addEventListener('transitionend', () => {
+        divContent.remove();
+      });
+      divContent.style.transform = `translateX(${'0'}%)`;
+      emailRef.current.parentElement.classList.remove('error');
+      TextAreaRef.current.parentElement.classList.remove('error');
+      emailRef.current.parentElement.classList.remove('success');
+      TextAreaRef.current.parentElement.classList.remove('success');
+    }, 5000);
+  };
+  // Error function
+  const setError = (inputRef) => {
+    if (inputRef.current.parentElement.classList.contains('success')) {
+      inputRef.current.parentElement.classList.remove('success');
+    } else {
+      inputRef.current.parentElement.classList.add('error');
+    }
+  };
+
+  // success Function
+  const setSuccess = (inputRef) => {
+    if (inputRef.current.parentElement.classList.contains('error')) {
+      inputRef.current.parentElement.classList.remove('error');
+    } else {
+      inputRef.current.parentElement.classList.add('success');
+    }
+  };
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    const { email, message } = validInpt;
+    // const pattern = /^[^]+@[^]+\.[a-z]{2,3}$/
+    const pattern = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+    if (!email && !message) {
+      setError(emailRef);
+      setError(TextAreaRef);
+      showMessage('Pls! fill in the required inputs');
+    } else if (!email && message) {
+      setError(emailRef);
+
+      showMessage("Ooops! Email can't be empty");
+    } else if (!email.match(pattern)) {
+      setError(emailRef);
+      showMessage('Ooops! Email not valid');
+    } else if (!message && email.match(pattern)) {
+      setError(TextAreaRef);
+
+      showMessage('Leave a message pls!');
+    } else if (email && !message) {
+      setError(TextAreaRef);
+      showMessage('Please enter valid inputs');
+    } else if (email && message) {
+      emailjs.sendForm(
+        'service_jvbk5b4', 'template_zbxydka', form.current, 'XgZaqWBWHffgTBbd2',
       );
+      setSuccess(emailRef);
+      setSuccess(TextAreaRef);
+      showMessage('Message sent successfully', 'green');
+
+      setValidInpt({
+        name: '',
+        email: '',
+        subject: '',
+        message: '',
+      });
+    }
   };
 
   return (
@@ -54,37 +133,70 @@ const Contact = () => {
             questions, don&apos;t hesitate to contact me using below form either.
           </p>
           <div className="contact-form">
-            <form ref={form} onSubmit={sendEmail}>
+            <form ref={form} onSubmit={onSubmit}>
               <ul>
                 <li className="half">
-                  <input placeholder="Name" type="text" name="name" required />
+                  <input
+                    autoComplete="false"
+                    type="text"
+                    placeholder="Name"
+                    name="name"
+                    value={validInpt.name}
+                    onChange={handleChange}
+                  />
+                  <span className="switch__bg" />
+                  <BsExclamationLg className="exclamation" />
+                  <BsPatchCheckFill className="checkCircle" />
                 </li>
                 <li className="half">
                   <input
-                    placeholder="Email"
+                    autoComplete="false"
+                    ref={emailRef}
                     type="email"
+                    placeholder="Email"
                     name="email"
-                    required
+                    value={validInpt.email}
+                    onChange={handleChange}
                   />
+                  <span className="switch__bg" />
+                  <BsExclamationLg className="exclamation" />
+                  <BsPatchCheckFill className="checkCircle" />
                 </li>
                 <li>
                   <input
-                    placeholder="Subject"
+                    autoComplete="false"
                     type="text"
+                    placeholder="Subject"
                     name="subject"
-                    required
+                    value={validInpt.subject}
+                    onChange={handleChange}
                   />
+                  <span className="switch__bg" />
+                  <BsExclamationLg className="exclamation" />
+                  <BsPatchCheckFill className="checkCircle" />
                 </li>
                 <li>
                   <textarea
+                    autoComplete="false"
+                    ref={TextAreaRef}
+                    type="text"
                     placeholder="Message"
                     name="message"
-                    required
+                    value={validInpt.message}
+                    onChange={handleChange}
                   />
+                  <span className="switch__bg" />
+                  <BsExclamationLg className="exclamation" />
+                  <BsPatchCheckFill className="checkCircle" />
                 </li>
-                <li>
-                  <input type="submit" className="flat-button" value="SEND" />
-                </li>
+                <button type="submit" className="contact-button submit-button flat-button">
+                  <div>
+                    <span className="text">
+                      Send
+                      <RiSendPlane2Fill className="message-deliver" />
+                    </span>
+                  </div>
+                </button>
               </ul>
             </form>
           </div>
@@ -104,13 +216,12 @@ const Contact = () => {
           <span>adamabdimulhi.001@gmail.com</span>
         </div>
         <div className="map-wrap">
-          <MapContainer center={[0.3567696727136, 37.58755675111123]} zoom={14}>
+          <MapContainer center={[0.3567696727136, 37.58755675111123]} zoom={9}>
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
             <Marker position={[0.3567696727136, 37.58755675111123]}>
               <Popup>
                 Hi 👋 ! Here&apos;s where i live. find me here?
               </Popup>
-
             </Marker>
           </MapContainer>
         </div>
@@ -119,5 +230,4 @@ const Contact = () => {
     </>
   );
 };
-
 export default Contact;
