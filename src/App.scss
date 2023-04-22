@@ -35,6 +35,14 @@ $primary-color: #1b8abd;
   display: none;
 }
 
+.wrapper {
+  width: 100%;
+  height: auto;
+  background-color: #fbf8f8;
+  z-index: -999;
+  overflow: hidden;
+}
+
 .loader-active {
   display: block;
   position: absolute;
@@ -52,4 +60,35 @@ $primary-color: #1b8abd;
 input,
 textarea {
   font-family: 'Helvetica Neue', sans-serif;
+}
+
+.section__padding {
+  padding: 0 2rem;
+}
+
+@media screen and (min-width: 1200px) {
+  .section__padding {
+    padding-left: 12rem;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .section__padding {
+    padding: 0 3rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .section__padding {
+    padding: 0 2rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .section__padding {
+    padding: 0 1.8rem;
+  }
+  p {
+    font-size: 0.875rem;
+  }
 }
