@@ -19,13 +19,13 @@ const ProjectPage = () => {
   return (
     <section className="section__projects section__padding">
       <div className="text-zone">
-        <h2 aria-label="My projects" className="section__projects-title">
+        <h1 aria-label="My projects" className="section__projects-title">
           <AnimatedLetters
             letterClass={letterClass}
             strArray={['M', 'y', '', 'P', 'r', 'o', 'j', 'e', 'c', 't', 's']}
             idx={12}
           />
-        </h2>
+        </h1>
         <div className="section__projects-description">
           <Fade bottom>
             <p className="para">

@@ -48,15 +48,16 @@ const Home = () => {
             <AnimatedLetters
               letterClass={letterClass}
               strArray={nameAttar}
-              idx={25}
+              idx={15}
             />
             {' '}
             {' '}
             <br />
             <AnimatedLetters
+              className="description"
               letterClass={letterClass}
               strArray={jobArray}
-              idx={22}
+              idx={20}
             />
           </h1>
           <h2>Fullstack Developer</h2>

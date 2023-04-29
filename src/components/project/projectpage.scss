@@ -4,18 +4,22 @@
 }
 .section__projects-title {
   display: block;
-  font-size: 3rem;
+  font-size: 3.6rem;
   margin-bottom: 2rem;
-  .text-animate-hover {
-    &:hover {
-      color: rgb(233, 113, 33);
-    }
-  }
+  color: #fff;
+  
 }
 .section__projects-description {
-  width: 100%;
+  width: 40%;
   max-width: 600px;
+  font-size: 13px;
   margin-bottom: 2rem;
+  color: #fff;
+  font-family: sans-serif;
+  font-weight: 300;
+  max-width: fit-content;
+  animation: pulse 1s;
+
 }
 
 @media screen and (max-width: 1024px) {
