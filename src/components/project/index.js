@@ -7,132 +7,132 @@ import todolist from '../../assets/images/projects/todolist.jpeg';
 import space from '../../assets/images/projects/space.jpeg';
 import catstone1 from '../../assets/images/projects/cp1.png';
 import catstone3 from '../../assets/images/projects/cp3.png';
+import bookStore from '../../assets/images/projects/bookstore.png';
+import mathmajician from '../../assets/images/projects/math.jpeg';
 
 const Projects = [
+
   {
-    id: 1,
-    name: 'Wordle Clone',
-    desc:
-      'A game that gives you 5 attempts to guess the correct word of the day',
-    stack: 'HTML CSS JAVASCRIPT',
+    id: 5,
+    name: 'Space Travellers Hub',
+    desc: 's a web application using real live data from the SpaceX API. The website allows users to book rockets and join selected space missions.',
+    stack: 'React JS',
     gitHubUrl: {
       icon: <GrGithub />,
-      url: 'https://github.com/Almarex-Web-Dev/Wordle-clone',
+      url: 'https://github.com/AbdimulhinYussuf3675/Space_Travelers--Hub',
     },
     website: {
       icon: <TbWorld />,
-      url: 'https://worlde-cloned.netlify.app/',
+      url: 'https://adamspace.onrender.com/',
     },
     imgUrl: space,
   },
   {
     id: 2,
-    name: 'Restaurant Website',
-    desc: 'A Responsive restaurant website design with great UI Effect',
-    stack: 'React JS',
+    name: 'Leaderboard',
+    desc: 'The leaderboard website displays scores submitted by different players',
+    stack: 'Javascript, CSS',
     gitHubUrl: {
       icon: <GrGithub />,
-      url: 'https://github.com/Almarex-Web-Dev/Restaurant-Website-project',
+      url: 'https://github.com/AbdimulhinYussuf3675/Leaderboard',
     },
     website: {
       icon: <TbWorld />,
-      url: 'https://gericht-restaurant-website.netlify.app/',
+      url: 'https://abdimulhinyussuf3675.github.io/Leaderboard/dist/',
     },
     imgUrl: leaderboad,
   },
   {
     id: 3,
-    name: 'GPT-3 Project',
-    desc: 'This is an amazing project with cool UI interface',
-    stack: 'React JS',
+    name: 'MNnet',
+    desc: 'This project is a movie website with features of adding comment, tap on like to show interest and make reservations',
+    stack: 'Javascript',
     imgUrl: mnet,
 
     gitHubUrl: {
       icon: <GrGithub />,
-      url: 'https://github.com/Almarex-Web-Dev/OpenAI-project',
+      url: 'https://github.com/AbdimulhinYussuf3675/Mnet_Movie',
     },
     website: {
       icon: <TbWorld />,
-      url: 'https://gpt3-openai-project.netlify.app/',
+      url: 'https://abdimulhinyussuf3675.github.io/Mnet_Movie/dist/',
     },
   },
   {
     id: 4,
-    name: 'Hotel Booking Project',
-    desc: 'A complicated project that enhanced my skills a lot',
-    stack: 'React JS',
+    name: 'JS To-Do list',
+    desc: 'Its a simple website that allows for doing that, and i used ES6 and Webpack!',
+    stack: 'JavaScript',
     gitHubUrl: {
       icon: <GrGithub />,
-      url: 'https://github.com/Almarex-Web-Dev/React-booking-project',
+      url: 'https://github.com/AbdimulhinYussuf3675/JS_To_Do_List',
     },
     website: {
       icon: <TbWorld />,
-      url: 'https://react-booking-project.netlify.app/',
+      url: 'https://abdimulhinyussuf3675.github.io/JS_To_Do_List/dist/',
     },
-    imgUrl:
-      'https://cdn.dribbble.com/userupload/2512424/file/original-03f9f265f9a4adbd54644841930518a1.png?compress=1&resize=320x240&vertical=top',
+    imgUrl: todolist,
   },
-
   {
-    id: 5,
-    name: 'Rest Country API',
-    desc: 'A project that displays all information about a country',
-    stack: 'React JS',
+    id: 1,
+    name: 'Adam Studios',
+    desc:
+      'The goal here is to master all of the tools and best practices of HTML,CSS and JavaScript.',
+    stack: 'HTML CSS JAVASCRIPT',
     gitHubUrl: {
       icon: <GrGithub />,
-      url: 'https://github.com/Almarex-Web-Dev/rest-countries-api-project',
+      url: 'https://github.com/AbdimulhinYussuf3675/Module1-Capstone',
     },
     website: {
       icon: <TbWorld />,
-      url: 'https://rest-countries-web-app-project.netlify.app/',
+      url: 'https://abdimulhinyussuf3675.github.io/Module1-Capstone/',
     },
     imgUrl: catstone1,
   },
   {
     id: 6,
-    name: 'Huddle Landing Page',
-    desc: 'A simple landing page website',
-    stack: 'React js, SCSS',
+    name: 'Population-Count',
+    desc: 'This is a web-app that allows users to have access to population data of countries across the world.',
+    stack: 'React js, Redux',
     gitHubUrl: {
       icon: <GrGithub />,
-      url: 'https://github.com/Almarex-Web-Dev/Huddle-landing-page',
+      url: 'https://github.com/AbdimulhinYussuf3675/React-capstone_project',
     },
     website: {
       icon: <TbWorld />,
-      url: 'https://huddle-website-project.netlify.app/',
+      url: 'https://adam-census.onrender.com/',
     },
     imgUrl: catstone3,
   },
   {
     id: 4,
-    name: 'Hotel Booking Project',
-    desc: 'A complicated project that enhanced my skills a lot',
-    stack: 'React JS',
+    name: 'BookStore',
+    desc: 'This is a website that allows users to add and remove a book, and display a the list of books added on the page',
+    stack: 'React JS, Redux-toolkit',
     gitHubUrl: {
       icon: <GrGithub />,
-      url: 'https://github.com/Almarex-Web-Dev/React-booking-project',
+      url: 'https://github.com/AbdimulhinYussuf3675/Bookstore',
     },
     website: {
       icon: <TbWorld />,
-      url: 'https://react-booking-project.netlify.app/',
+      url: 'https://adam-bookshop.onrender.com/',
     },
-    imgUrl:
-      'https://cdn.dribbble.com/userupload/2512424/file/original-03f9f265f9a4adbd54644841930518a1.png?compress=1&resize=320x240&vertical=top',
+    imgUrl: bookStore,
   },
   {
     id: 2,
-    name: 'Restaurant Website',
-    desc: 'A Responsive restaurant website design with great UI Effect',
+    name: 'Math magicians',
+    desc: 'It is a Single Page App (SPA) that allows users to make simple calculations and read a random math-related quote.',
     stack: 'React JS',
     gitHubUrl: {
       icon: <GrGithub />,
-      url: 'https://github.com/Almarex-Web-Dev/Restaurant-Website-project',
+      url: 'https://github.com/AbdimulhinYussuf3675/math_magicians',
     },
     website: {
       icon: <TbWorld />,
-      url: 'https://gericht-restaurant-website.netlify.app/',
+      url: 'https://adam-calculator.onrender.com/',
     },
-    imgUrl: todolist,
+    imgUrl: mathmajician,
   },
 ];
 

@@ -15,7 +15,7 @@ function Particlesbnd() {
             value: '#252423',
           },
         },
-        fpsLimit: 120,
+        fpsLimit: 100,
         interactivity: {
           events: {
             onClick: {
